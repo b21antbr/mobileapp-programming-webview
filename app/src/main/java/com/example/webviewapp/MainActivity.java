@@ -13,7 +13,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 public class MainActivity extends AppCompatActivity {
+    private String myString;
 
+    void someMethod(){
+
+        myString="type here";
+
+    }
     public void showExternalWebPage(){
         // TODO: Add your code for showing external web page here
     }
