@@ -16,24 +16,49 @@ _Du kan ta bort all text som finns sedan tidigare_.
 Programkod ska se ut som exemplet nedan. Koden måste vara korrekt indenterad då den blir lättare att läsa vilket gör det lättare att hitta syntaktiska fel.
 
 ```
-function errorCallback(error) {
-    switch(error.code) {
-        case error.PERMISSION_DENIED:
-            // Geolocation API stöds inte, gör något
-            break;
-        case error.POSITION_UNAVAILABLE:
-            // Misslyckat positionsanrop, gör något
-            break;
-        case error.UNKNOWN_ERROR:
-            // Okänt fel, gör något
-            break;
-    }
+protected void onCreate(Bundle savedInstanceState) {
+        myWebView = findViewById(R.id.my_webview);
+        myWebView.getSettings().setJavaScriptEnabled(true);
+        WebViewClient webViewClient = new WebViewClient();
+        myWebView.setWebViewClient(webViewClient);
 }
+public boolean onOptionsItemSelected(MenuItem item) {
+ if (id == R.id.action_external_web) {
+            showExternalWebPage();
+            Log.d("==>","Will display external web page");
+            return true;
+        }
+
+        if (id == R.id.action_internal_web) {
+            showInternalWebPage();
+            Log.d("==>","Will display internal web page");
+            return true;
+        }
+ }
+
+ <WebView
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:id="@+id/my_webview"
+         />
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8"/>
+     <title>Mokoko Test</title>
+ </head>
+ <body>
+ <h1>bruh</h1>
+ <h1>bruh</h1>
+ </body>
+ </html>
 ```
 
 Bilder läggs i samma mapp som markdown-filen.
 
-![](android.png)
+![](ScreenshotExternal.png)
+![](ScreenshotInternal.png)
 
 Läs gärna:
 
